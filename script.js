@@ -170,7 +170,7 @@ function clearCart() {
 }
 
 function checkOut() {
-    document.getElementById("summary").innerHTML = `Tack för ditt köp!`;
+    document.getElementById("summary").innerHTML = "Tack för ditt köp!";
     document.getElementsByClassName("cart-content")[0].innerHTML = "";
     totalPrice();
     initCart();
