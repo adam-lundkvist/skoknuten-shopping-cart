@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Färger */
+:root {
+    --main-color: crimson;
+    --text-color: black;
+    --bg-color: white;
+    --btn-clicked: #006637;
+    --header-color: #E14D2A;
+    --buy-btn-clicked: #FD841F;
+    --cart-bg-color: #00ADB5;
+    --cart-btn-color: #FD841F;
+    --amount-notify: #001253;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: var(--bg-color) !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.container {
+    max-width: 1068px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* Header */
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--header-color);
+    position: fixed;
+    z-index: 999;
+}
+
+#cart-icon {
+    text-align: center;
+}
+
+#open-cart {
+    font-size: xx-large;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#open-cart:hover {
+    color: #001253;
+}
+
+.open-cart { 
+    animation-name: cart-amount-notify;
+    animation-duration: 2s;
+}
+
+@keyframes cart-amount-notify {
+    0% {color: var(--text-color);}
+    50% {color: var(--buy-btn-clicked);}
+    100% {color: var(--text-color);}
+}
+
+#quantity {
+    position: absolute;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 0;
+    right: -10px;
+    top: -10px;
+    border-radius: 50%;
+    display: none;
+    background: var(--amount-notify);
+    color: var(--bg-color);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* a:hover {
+    color: var(--text-color);
+} */
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    justify-content: space-between;
+    color: var(--text-color);
+}
+
+#cart-icon {
+    position: relative;
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.logo:hover {
+    color: #FD841F;
+    background-color: #001253;
+    cursor: pointer;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Product section */
+
+section {
+    padding: 4rem 0 3rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.shop {
+    margin-top: 6rem;
+    padding-top: 20px;
+}
+
+.shop-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.product-box {
+   position: relative; 
+}
+
+.product-box:hover {
+    padding: 10px;
+    transition: 0.4s;
+}
+
+.product-img {
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.product-name {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.price {
+    font-weight: 600;
+}
+
+/* Knapp Köp/lägg till i kundvagn */
+
+.add-to-cart-div {
+    margin: 1rem 0 1rem 0;
+}
+
+.add-to-cart {
+    margin: 0 auto;
+    display: block;
+    border: 1px solid var(--text-color);
+    background: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 5px 10px 5px 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 60px;
+    height: 40px;
+}
+
+/* Animation vid knapptryck */
+
+.add-to-cart-animation {
+    margin: 0 auto;
+    display: block;
+    border: 1px solid var(--text-color);
+    background: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 5px 10px 5px 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 60px;
+    height: 40px;
+    animation-name: buy-cart-btn-clicked;
+    animation-duration: 2s;
+}
+
+@keyframes buy-cart-btn-clicked {
+    0% {background: none;}
+    50% {background: var(--buy-btn-clicked); color: var(--text-color); border: none;}
+    100% {background: none;}
+}
+
+/* Kundvagn */
+
+#cart-title {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cart-title {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+
+.close-cart {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 0;
+}
+
+.cart-content {
+    padding: 20px;
+}
+
+.cart {
+    top: 0;
+    right: 0;
+    min-width: 30%;
+    height: 100%;
+    z-index: 1000;
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: 0 10px 10px 2px;
+    display: none;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+/* Produktlåda */
+.cart-product-box {
+    padding: 5px 0 5px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+    max-width: 100%;
+}
+
+.cart-product-content {
+    display: flex;
+    align-items: center;
+}
+
+.cart-image-div {
+    flex-basis: 40%
+}
+
+.cart-img {
+    max-width: 140px;
+}
+
+.cart-text-div {
+    flex-basis: 40%;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.cart-product-name {
+    margin: 0.5rem 0 0.5rem 0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cart-product-price {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Knappar i kundvagnen. */
+.icon-container {
+    padding: 10 20px 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.icons {
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+.product-amount {
+    font-size: 1rem;
+    font-weight: 600;
+    flex: 0 0 25px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .icons {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .icons {
+        font-size: 1.9rem;
+    }
+    .cart {
+        width: 100%;
+    }
+}
+
+.decrement {
+    flex: 0 0 0;
+}
+
+.increment {
+    flex: 0 0 50x;
+} 
+
+.remove-item {
+    position: absolute;
+    right: 0;
+}
+
+#buttons {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.cart-btns {
+    background: var(--cart-btn-color);
+    color: var(--text-color);
+    border: none;
+    margin: 2px;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.cart-btns:hover {
+    background: black;
+    color: #FD841F;
+}
+
+#summary {
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 40em) {
+    .product-amount {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 563px) {
+    .logo {
+        padding-left: 10px;
+    }
+
+    #cart-icon {
+        padding-right: 10px;
+    }
+}
