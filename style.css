@@ -45,7 +45,6 @@ header {
 #open-cart {
     font-size: xx-large;
     cursor: pointer;
-    padding: 2px;
     border-radius: 5px;
 }
 
@@ -78,10 +77,6 @@ header {
     font-size: 13px;
     font-weight: 500;
 }
-
-/* a:hover {
-    color: var(--text-color);
-} */
 
 .nav {
     display: flex;
