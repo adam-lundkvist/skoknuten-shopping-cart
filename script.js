@@ -118,9 +118,10 @@ function renderCart() {
             </div>
             `; 
             cartContainer.appendChild(cartItem);
+            localStorage.setItem("product", cartItem);
             cartItem.querySelector(".increment").addEventListener("click", () => increment(product.name)); 
             cartItem.querySelector(".decrement").addEventListener("click", () => decrement(product.name)); 
-            cartItem.querySelector(".remove-item").addEventListener("click", () => removeItem(cartItem)); 
+            cartItem.querySelector(".remove-item").addEventListener("click", () => removeItem(cartItem));
         }
     }
     totalPrice();
@@ -162,7 +163,6 @@ function cartQuantity(totalQuantity) {
     }
 }
 
-
 // Funktion som rensar kundvagn. 
 function clearCart() {
     initCart();
@@ -170,9 +170,8 @@ function clearCart() {
 }
 
 function checkOut() {
-    document.getElementById("summary").innerHTML = "Tack för ditt köp!";
+    document.getElementById("summary").innerHTML = `Tack för ditt köp! Din order har tagit emot`;
     document.getElementsByClassName("cart-content")[0].innerHTML = "";
-    totalPrice();
     initCart();
 }
 
