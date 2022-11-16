@@ -11,16 +11,19 @@
     --amount-notify: #001253;
 }
 
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
     color: var(--text-color);
     background: var(--bg-color) !important;
-    font-family: 'Montserrat', sans-serif !important;
 }
 
 .container {
-    max-width: 95%;
+    max-width: 90%;
     margin: auto;
     padding-top: 20px;
 }
@@ -158,6 +161,11 @@ a {
 
 /* Product section */
 
+main {
+    padding: 0;
+    margin: 0;
+}
+
 section {
     padding: 4rem 0 3rem;
 }
@@ -222,6 +230,7 @@ section {
     font-weight: 600;
     width: 60px;
     height: 40px;
+    cursor: pointer;
 }
 
 /* Animation vid knapptryck */
