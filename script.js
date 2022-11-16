@@ -173,6 +173,7 @@ function checkOut() {
     document.getElementById("summary").innerHTML = `Tack för ditt köp! Din order har tagits emot`;
     document.getElementsByClassName("cart-content")[0].innerHTML = "";
     initCart();
+    renderCart();
 }
 
 window.onload = function() {
