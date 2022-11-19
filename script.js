@@ -10,7 +10,6 @@ function initCart() {
 function increment(name) {
     cart[name]++;
     renderCart();
-    totalPrice();
 }
 
 function decrement(name) {
@@ -18,7 +17,6 @@ function decrement(name) {
     cart[name]--;
     }
     renderCart();
-    totalPrice();
 }
 
 document.getElementsByTagName("body")[0].style.overflowY = "scroll";
@@ -98,7 +96,7 @@ function renderCart() {
         const cartProductImg = product.image;
         const cartProductName = product.name; 
         const productPrice = amount * product.price; 
-        if (amount != 0) {
+        if (amount > 0) {
             cartItem.innerHTML = 
             `
             <div class="cart-product-content">
@@ -121,18 +119,16 @@ function renderCart() {
             localStorage.setItem("product", cartItem);
             cartItem.querySelector(".increment").addEventListener("click", () => increment(product.name)); 
             cartItem.querySelector(".decrement").addEventListener("click", () => decrement(product.name)); 
-            cartItem.querySelector(".remove-item").addEventListener("click", () => removeItem(cartItem));
+            cartItem.querySelector(".remove-item").addEventListener("click", () => removeItem(product.name));
         }
     }
     totalPrice();
 }
 
 // Funktion som tar bort produkt från kundvagnen.
-function removeItem(cartItem) {
-    const buttonClicked = cartItem;
-    buttonClicked.remove();
-    totalPrice();
-    initCart();
+function removeItem(name) {
+    cart[name] = 0;
+    renderCart();
 }
 
 // Funktion som visar totalt pris. 
@@ -178,5 +174,4 @@ function checkOut() {
 window.onload = function() {
     initCart();
     renderProducts(); 
-    renderCart();
 }
