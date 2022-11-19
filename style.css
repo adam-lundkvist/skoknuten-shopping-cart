@@ -358,6 +358,12 @@ section {
     text-align: center;
 }
 
+@media (max-width: 800px) {
+    .cart {
+        width: 70%;
+    }
+}
+
 @media (max-width: 700px) {
     .icons {
         font-size: 1.7rem;
@@ -367,9 +373,6 @@ section {
 @media (max-width: 500px) {
     .icons {
         font-size: 1.9rem;
-    }
-    .cart {
-        width: 100%;
     }
 }
 
