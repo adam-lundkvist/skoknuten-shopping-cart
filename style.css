@@ -418,6 +418,30 @@ section {
     text-align: center;
 }
 
+footer {
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 30px;
+}
+
+#footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+@media (max-width: 600px) {
+    #footer-content {
+        display: block;
+    }
+}
+
+#footer-content p {
+    font-weight: 600;
+}
+#footer-content a {
+    color: var(--bg-color);
+}
+
 @media (max-width: 40em) {
     .product-amount {
         font-size: 0.9rem;
