@@ -17,7 +17,7 @@
         <!-- Nav -->
         <nav class="nav container">
             <a href="index.html" class="logo">Skoknuten</a>
-            <div id="main-nav" class="flex">
+            <nav id="main-nav" class="flex">
                 <!-- <div id="search-div">
                 <i class="fa-solid fa-magnifying-glass icons" id="search-icon"></i>
                 <input type="text" id="search-input" onkeyup="searchProduct()" placeholder="Sök produkt" title="Sök produkt">
@@ -26,13 +26,13 @@
                     <i class="fa-solid fa-cart-shopping" id="open-cart"></i>
                     <div id="quantity"></div>
                 </div>
-            </div>
+            </nav>
         </nav>
     </header>
     <!-- Kundvagn -->
-    <div class="cart">
+    <section class="cart">
         <div id="cart-title">
-            <h3 class="cart-title">Kundvagn</h3>
+            <h3 class="cart-title">Cart</h3>
             <i class="fa-solid fa-square-xmark close-cart icons"></i>
         </div>
         <hr/>
@@ -41,14 +41,14 @@
         </div>
         <p id="summary"></p>
         <div id="buttons">
-            <button onclick="checkOut()" class="cart-btns" type="button">Köp nu</button>
-            <button onclick="clearCart()" class="cart-btns" type="button">Rensa kundvagn</button>
+            <button onclick="checkOut()" class="cart-btns" type="button">Checkout</button>
+            <button onclick="clearCart()" class="cart-btns" type="button">Clear Cart</button>
         </div>
-    </div>
+    </section>
     <main>
         <!-- Webbshop -->
         <section class="shop container">
-            <h2 class="section-title">Produkter</h2>
+            <h2 class="section-title">Products</h2>
             <!-- Innehåll -->
             <div class="shop-content">        
             </div>
