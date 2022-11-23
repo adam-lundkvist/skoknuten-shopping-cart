@@ -190,11 +190,12 @@ section {
 
 .product-box {
    position: relative; 
+   transition: 0.5s;
+   padding: 10px;
 }
 
 .product-box:hover {
-    padding: 10px;
-    transition: 0.4s;
+    box-shadow: 0px 0px 10px 3px;
 }
 
 .product-img {
@@ -228,8 +229,8 @@ section {
     padding: 5px 10px 5px 10px;
     text-transform: uppercase;
     font-weight: 600;
-    width: 60px;
-    height: 40px;
+    /* width: 60px;
+    height: 40px; */
     cursor: pointer;
 }
 
@@ -245,15 +246,13 @@ section {
     padding: 5px 10px 5px 10px;
     text-transform: uppercase;
     font-weight: 600;
-    width: 60px;
-    height: 40px;
     animation-name: buy-cart-btn-clicked;
     animation-duration: 2s;
 }
 
 @keyframes buy-cart-btn-clicked {
     0% {background: none;}
-    50% {background: var(--buy-btn-clicked); color: var(--text-color); border: none;}
+    50% {background: var(--buy-btn-clicked); color: var(--text-color); border: 1px solid var(--bg-color);}
     100% {background: none;}
 }
 
@@ -294,6 +293,7 @@ section {
     display: none;
     position: fixed;
     overflow-y: scroll;
+    margin: auto;
 }
 
 /* Produktlåda */
@@ -360,7 +360,7 @@ section {
 
 @media (max-width: 800px) {
     .cart {
-        width: 70%;
+        width: 80%;
     }
 }
 
