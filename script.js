@@ -56,7 +56,7 @@ function renderProducts() {
         <h2 class="product-name">${productName}</h2>
         <span class="price">${productPrice} kr</span>
         <div class="add-to-cart-div">
-        <button type="button" class="add-to-cart">Köp</button>
+        <button type="button" class="add-to-cart">Add To Cart</button>
         </div> 
         `;
         const item = document.createElement("div");
@@ -145,7 +145,7 @@ function totalPrice() {
         totalPrice = totalPrice + price;
         totalQuantity = totalQuantity + parseFloat(quantityEl);
     }
-    document.getElementById("summary").innerHTML = `Totalt att betala: ${totalPrice} kr`;
+    document.getElementById("summary").innerHTML = `Total Price: ${totalPrice} kr`;
     cartQuantity(totalQuantity);
 }
 
@@ -166,13 +166,13 @@ function clearCart() {
 }
 
 function checkOut() {
-    const cartContainer = document.querySelector(".cart-content");
-    if (cartContainer.innerHTML !== null) {
-    initCart();
-    renderCart();
-    document.getElementById("summary").innerHTML = `Tack för ditt köp! Din order har tagits emot`;
+    const cartContainer = document.querySelector(".cart-content"); 
+    if (cartContainer.querySelector(".cart-product-box") !== null) {
+        initCart();
+        renderCart();
+        document.getElementById("summary").innerHTML = `Thank you! Your order has been recieved.`;        
     } else {
-    document.getElementById("summary").innerHTML = "Kundvagnen är tom.";
+        document.getElementById("summary").innerHTML = `The cart is empty. Please add a product.`;
     }
 }
 
