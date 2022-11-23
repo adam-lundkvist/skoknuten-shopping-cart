@@ -167,7 +167,7 @@ function clearCart() {
 
 function checkOut() {
     const cartContainer = document.querySelector(".cart-content");
-    if (cartContainer.childNodes.length !== 0) {
+    if (cartContainer.innerHTML !== null) {
     initCart();
     renderCart();
     document.getElementById("summary").innerHTML = `Tack för ditt köp! Din order har tagits emot`;
