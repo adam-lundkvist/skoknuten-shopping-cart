@@ -48,39 +48,6 @@ header {
     align-items: center;
 }
 
-#search-div {
-    display: flex;
-    align-items: center;
-    background: var(--text-color);
-    gap: 0.5rem;
-    border: 1px solid var(--text-color);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#search-input {
-    background: var(--text-color);
-    border: none;
-    color: var(--header-color);
-}
-
-::placeholder {
-    color: var(--header-color);
-    opacity: 1;
-}
-  
-:-ms-input-placeholder {
-    color: var(--header-color);
-}
-  
-::-ms-input-placeholder {
-    color: var(--header-color);
-}
-
-#search-icon {
-    color: var(--header-color);
-}
-
 #cart-icon {
     text-align: center;
     padding: 0;
@@ -337,7 +304,7 @@ section {
 
 /* Knappar i kundvagnen. */
 .icon-container {
-    padding: 10 20px 10px 20px;
+    padding: 10px 0px 10px 0px;
     display: flex;
     align-items: center;
     margin-top: 1rem;
@@ -347,7 +314,7 @@ section {
 .icons {
     cursor: pointer;
     color: var(--text-color);
-    padding: 5px;
+    padding: 2px;
     font-size: 1.5rem;
 }
 
@@ -381,7 +348,7 @@ section {
 }
 
 .increment {
-    flex: 0 0 50x;
+    flex: 0 0 50px;
 } 
 
 .remove-item {
