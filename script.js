@@ -1,4 +1,4 @@
-// Initierar kundvagnens.
+// Initierar kundvagnen.
 let cart = {};
 function initCart() {
     for (const product of products) {
@@ -8,8 +8,10 @@ function initCart() {
 
 // Ökar antalet av produktens namn och renderar om varukorgen. 
 function increment(name) {
+    if (cart[name] < 10) {
     cart[name]++;
     renderCart();
+    }
 }
 
 function decrement(name) {
@@ -52,13 +54,13 @@ function renderProducts() {
         const productName = product.name;
         const productPrice = product.price;        
         const template = `
-        <img class="product-img" src="${productImg}">
-        <h2 class="product-name">${productName}</h2>
-        <span class="price">${productPrice} kr</span>
-        <div class="add-to-cart-div">
-        <button type="button" class="add-to-cart">Add To Cart</button>
-        </div> 
-        `;
+            <img class="product-img" src="${productImg}">
+            <h2 class="product-name">${productName}</h2>
+            <span class="price">${productPrice} kr</span>
+            <div class="add-to-cart-div">
+            <button type="button" class="add-to-cart">Add To Cart</button>
+            </div> 
+            `;
         const item = document.createElement("div");
         item.classList.add("product-box");
         item.innerHTML = template;
@@ -120,6 +122,11 @@ function renderCart() {
             cartItem.querySelector(".increment").addEventListener("click", () => increment(product.name)); 
             cartItem.querySelector(".decrement").addEventListener("click", () => decrement(product.name)); 
             cartItem.querySelector(".remove-item").addEventListener("click", () => removeItem(product.name));
+        } 
+        
+        if (amount === 10) {
+            cartItem.querySelector(".increment").style.color = "gray";
+            cartItem.querySelector(".increment").style.cursor = "auto";
         }
     }
     totalPrice();
@@ -161,8 +168,13 @@ function cartQuantity(totalQuantity) {
 
 // Funktion som rensar kundvagn. 
 function clearCart() {
-    initCart();
-    renderCart();
+    const cartContainer = document.querySelector(".cart-content"); 
+    if (cartContainer.querySelector(".cart-product-box") == null) {
+        document.getElementById("summary").innerHTML = `The cart is already empty.`;        
+    } else {
+        initCart();
+        renderCart();
+    }
 }
 
 function checkOut() {
