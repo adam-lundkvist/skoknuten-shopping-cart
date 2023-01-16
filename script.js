@@ -118,7 +118,6 @@ function renderCart() {
             </div>
             `; 
             cartContainer.appendChild(cartItem);
-            localStorage.setItem("product", cartItem);
             cartItem.querySelector(".increment").addEventListener("click", () => increment(product.name)); 
             cartItem.querySelector(".decrement").addEventListener("click", () => decrement(product.name)); 
             cartItem.querySelector(".remove-item").addEventListener("click", () => removeItem(product.name));
